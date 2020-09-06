@@ -1,0 +1,42 @@
+<apex:page id="Page" standardController="Event">
+ 
+  <apex:form id="Form">
+ 
+    <apex:sectionHeader title="行動" subtitle="{!Event.Subject}" />
+ 
+    <apex:pageblock >
+     
+      <apex:pageblockButtons >
+        <apex:commandButton action="{!save}" value="保存" />
+        <apex:commandButton action="{!cancel}" value="キャンセル" />
+      </apex:pageblockButtons>
+ 
+      <apex:pageBlockSection title="行動情報" columns="2">
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputlabel for="Subject" value="件名" />
+          <apex:inputfield id="Subject" value="{!Event.Subject}" />
+        </apex:pageBlockSectionItem>
+         
+        <apex:pageBlockSectionItem >
+          <apex:outputlabel for="OwnerId" value="任命先    " />
+          <apex:inputfield id="OwnerId" value="{!Event.OwnerId}" />
+        </apex:pageBlockSectionItem>
+         
+        <apex:pageBlockSectionItem >
+          <apex:outputlabel for="StartDateTime" value="開始" />
+          <apex:inputfield id="StartDateTime" value="{!Event.StartDateTime}" />
+        </apex:pageBlockSectionItem>
+ 
+         <apex:pageBlockSectionItem >
+          <apex:outputlabel for="EndDateTime" value="終了" />
+          <apex:inputfield id="EndDateTime" value="{!Event.EndDateTime}" />
+        </apex:pageBlockSectionItem>
+         
+      </apex:pageBlockSection>
+ 
+    </apex:pageblock>
+ 
+  </apex:form>
+ 
+</apex:page>

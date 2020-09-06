@@ -1,0 +1,30 @@
+<apex:page standardController="Account" recordSetVar="accounts" id="page">
+  <script>  
+function nameJs(accountName){
+	alert(accountName);
+}
+</script>
+<h1>
+                 hello world 
+              </h1>
+	<apex:form id="form">
+        <apex:pageBlock id="block"><br/>
+            
+          <apex:pageBlockSection columns="1" id="blockSection">
+              <apex:pageBlockTable value="{!accounts}" var="item" id="blockTable">
+                  <apex:column >
+                      <apex:commandButton onclick="nameJs('{!item.Name}');" value="取引先名"/>
+                  </apex:column>
+                  <apex:column headervalue="{!$ObjectType.Account.Fields.Name.Label}">
+                      <apex:outputField value="{!item.Name}"/>
+                  </apex:column>
+                  
+                  </apex:pageBlockTable>
+              
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+   
+   
+</apex:page>
